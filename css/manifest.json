@@ -1,0 +1,22 @@
+{
+    "name": "To Do da Pandinha",
+    "short_name": "Pandinha",
+    "description": "Um cantinho especial para organizar o dia.",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#F8F6F3",
+    "theme_color": "#F4B6C2",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "assets/icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
