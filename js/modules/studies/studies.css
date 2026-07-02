@@ -1,0 +1,278 @@
+/* ======================================================
+   STUDIES PAGE
+====================================================== */
+
+.studies-page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    padding: 1.5rem;
+    max-width: 640px;
+    margin: 0 auto;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.studies-header {
+    text-align: center;
+}
+
+.studies-header h1 {
+    font-size: var(--text-3xl);
+    color: var(--charcoal);
+}
+
+.studies-subtitle {
+    color: var(--coffee);
+    font-size: var(--text-md);
+}
+
+/* Pomodoro */
+.pomodoro-card {
+    background: var(--gradient-calm);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-6);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.pomodoro-mode {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    color: var(--sky);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.pomodoro-mode--break {
+    color: var(--sage);
+}
+
+.pomodoro-timer {
+    font-family: var(--font-title);
+    font-size: 3rem;
+    font-weight: var(--weight-bold);
+    color: var(--charcoal);
+    font-variant-numeric: tabular-nums;
+}
+
+.pomodoro-controls {
+    display: flex;
+    gap: var(--space-3);
+}
+
+.pomodoro-btn {
+    padding: var(--space-2) var(--space-5);
+    border-radius: var(--radius-pill);
+    border: 2px solid var(--mist);
+    background: var(--cream);
+    color: var(--coffee);
+    font-weight: var(--weight-semibold);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.pomodoro-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+.pomodoro-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pomodoro-btn--primary {
+    background: var(--gradient-rose);
+    border-color: transparent;
+    color: var(--rose-dark);
+}
+
+.pomodoro-subject-label {
+    font-size: var(--text-sm);
+    color: var(--coffee);
+    margin-top: var(--space-2);
+}
+
+.pomodoro-subject-select {
+    border: none;
+    background: var(--cream);
+    padding: 0.5rem 0.8rem;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-xs);
+}
+
+/* Total estudado */
+.studies-total {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2);
+    font-size: var(--text-md);
+    color: var(--coffee);
+}
+
+.studies-total strong {
+    color: var(--rose-dark);
+}
+
+/* Formulário de nova matéria */
+.studies-form {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--cream);
+    padding: 0.6rem 0.8rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    border: 2px solid transparent;
+    transition: all var(--transition-normal);
+}
+
+.studies-form:focus-within {
+    border-color: var(--rose);
+}
+
+.studies-form input {
+    flex: 1;
+    border: none;
+    padding: 0.5rem 0.4rem;
+    font-size: 1rem;
+    outline: none;
+    background: transparent;
+    color: var(--charcoal);
+}
+
+.studies-form button {
+    background: var(--gradient-rose);
+    color: var(--rose-dark);
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* Lista de matérias */
+.studies-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.subject {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    background: var(--cream);
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.subject:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.subject--done {
+    border-left: 5px solid var(--success);
+    opacity: 0.85;
+}
+
+.subject__check {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid var(--rose);
+    background: transparent;
+    cursor: pointer;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.subject--done .subject__check {
+    background: var(--success);
+    border-color: var(--success);
+}
+
+.subject--done .subject__check::after {
+    content: '✓';
+    color: white;
+    font-size: 0.75rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.subject__content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.subject__icon {
+    font-size: var(--text-2xl);
+}
+
+.subject__title {
+    display: block;
+    font-size: var(--text-md);
+    color: var(--charcoal);
+    font-weight: var(--weight-medium);
+}
+
+.subject--done .subject__title {
+    text-decoration: line-through;
+    color: var(--text-light);
+}
+
+.subject__minutes {
+    display: block;
+    font-size: var(--text-xs);
+    color: var(--sky);
+    font-weight: var(--weight-semibold);
+}
+
+.subject__delete {
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    opacity: 0.3;
+    transition: all var(--transition-fast);
+}
+
+.subject:hover .subject__delete {
+    opacity: 1;
+}
+
+.studies-empty {
+    text-align: center;
+    color: var(--text-light);
+    font-style: italic;
+    padding: var(--space-6) var(--space-3);
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (min-width: 768px) {
+    .studies-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+}

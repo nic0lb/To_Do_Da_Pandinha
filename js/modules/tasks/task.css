@@ -1,0 +1,380 @@
+/* ==========================================================
+  To Do da Pandinha - Estilos da Aba de Tarefas (Premium UI)
+========================================================== */
+
+.tasks-page {
+    padding: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Cabeçalho da Página */
+.tasks-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.tasks-header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    color: var(--color-text-main, #333);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.tasks-stats {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--color-text-muted, #666);
+    background: var(--color-bg-card, #fff);
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.tasks-stats strong {
+    color: var(--color-primary, #ff79c6);
+    font-weight: 600;
+}
+
+/* Formulário de Criação Atualizado */
+.tasks-form {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem; /* Aumentado o espaço entre os elementos internos */
+    background: var(--color-bg-card, #fff);
+    padding: 0.65rem 0.9rem; /* Mais espaçoso por dentro */
+    border-radius: 18px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem; /* Mais espaço antes de começar os filtros */
+    border: 2px solid transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tasks-form:focus-within {
+    border-color: var(--color-primary, #ff79c6);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(255, 121, 198, 0.15);
+}
+
+.task-category-select {
+    border: none;
+    background: var(--color-bg-subtle, #f8f9fa);
+    padding: 0.6rem 0.8rem;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.2s;
+}
+
+.task-category-select:hover {
+    background: var(--color-border, #e2e8f0);
+}
+
+.tasks-form input {
+    flex: 1;
+    border: none;
+    padding: 0.6rem 0.4rem;
+    font-size: 1rem;
+    outline: none;
+    background: transparent;
+    color: var(--color-text-main, #333);
+}
+
+.tasks-form input::placeholder {
+    color: var(--color-text-muted, #a0aec0);
+}
+
+/* Botão + Premium UI */
+.tasks-form button {
+    background: linear-gradient(135deg, var(--color-primary, #ff79c6), #ff92d0);
+    color: white;
+    border: none;
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    font-size: 1.6rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(255, 121, 198, 0.3);
+    flex-shrink: 0;
+}
+
+.tasks-form button:hover {
+    transform: scale(1.06) rotate(90deg); /* Efeito sutil de rotação ao passar o mouse */
+    box-shadow: 0 6px 16px rgba(255, 121, 198, 0.45);
+    background: linear-gradient(135deg, #ff60b7, var(--color-primary, #ff79c6));
+}
+
+.tasks-form button:active {
+    transform: scale(0.95);
+}
+
+/* Filtros em formato de Abas Modernas */
+.tasks-filters {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    background: var(--color-bg-subtle, #f1f3f5);
+    padding: 0.3rem;
+    border-radius: 12px;
+}
+
+.filter-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text-muted, #666);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+    color: var(--color-text-main, #333);
+}
+
+.filter-btn.active {
+    background: var(--color-bg-card, #fff);
+    color: var(--color-primary, #ff79c6);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    font-weight: 600;
+}
+
+/* Lista de Cards de Tarefas */
+.tasks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    list-style: none;
+    padding: 0;
+    padding-right: 0.3rem;
+
+    /* Scroll interno: com muitas tarefas, apenas a lista rola.
+       O cabeçalho, formulário e filtros continuam visíveis e o
+       menu (sidebar/bottom-nav) nunca é empurrado para fora da tela. */
+    overflow-y: auto;
+    max-height: calc(100vh - var(--header-height, 72px) - var(--bottom-nav-height, 72px) - 260px);
+}
+
+@media (min-width: 1024px) {
+    .tasks-list {
+        max-height: calc(100vh - var(--header-height, 72px) - 260px);
+    }
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--color-bg-card, #fff);
+    padding: 1rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    border-left: 5px solid var(--color-border, #ccc);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    animation: slideUp 0.3s ease-out;
+}
+
+.task:hover {
+    transform: translateX(4px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* Indicadores de Cores por Categorias */
+.task.task--cat-pessoal { border-left-color: #ff79c6; }  /* Rosa */
+.task.task--cat-estudos { border-left-color: #8be9fd; }  /* Azul */
+.task.task--cat-trabalho { border-left-color: #ffb86c; } /* Laranja */
+.task.task--cat-outros { border-left-color: #bd93f9; }   /* Roxo */
+
+/* Checkbox Customizado Redondo */
+.task__check {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid var(--color-border, #cbd5e1);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.task__check:hover {
+    border-color: var(--color-primary, #ff79c6);
+    background: rgba(255, 121, 198, 0.1);
+}
+
+/* Estado de Tarefa Concluída */
+.task--done {
+    opacity: 0.6;
+}
+
+.task--done .task__title {
+    text-decoration: line-through;
+    color: var(--color-text-muted, #94a3b8);
+}
+
+.task--done .task__check {
+    background: var(--color-primary, #ff79c6);
+    border-color: var(--color-primary, #ff79c6);
+}
+
+.task--done .task__check::after {
+    content: '✓';
+    color: white;
+    font-size: 0.8rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+}
+
+/* Conteúdo da Tarefa */
+.task__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.task__title {
+    font-size: 1rem;
+    color: var(--color-text-main, #1e293b);
+    font-weight: 500;
+    word-break: break-word;
+}
+
+.task__tag-badge {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--color-text-muted, #64748b);
+    width: fit-content;
+}
+
+.task__date {
+    font-size: 0.8rem;
+    color: var(--color-text-muted, #94a3b8);
+    white-space: nowrap;
+}
+
+/* Botão de Deletar */
+.task__delete {
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 0.4rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    opacity: 0.3;
+}
+
+.task:hover .task__delete {
+    opacity: 1;
+}
+
+.task__delete:hover {
+    background: #ffe5e5;
+    transform: scale(1.1);
+}
+
+/* Estado Vazio */
+.task-empty {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    color: var(--color-text-muted, #94a3b8);
+    font-style: italic;
+    background: var(--color-bg-card, #fff);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+/* Animações keyframes extras caso não tenha no base */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* ======================================================
+   TASK STATS
+====================================================== */
+
+.tasks-stats {
+    display: flex;
+    gap: var(--space-4);
+    margin-top: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--text-light);
+}
+
+.tasks-stats span strong {
+    color: var(--charcoal);
+    font-weight: var(--weight-semibold);
+}
+
+/* ======================================================
+   EMPTY STATE
+====================================================== */
+
+.tasks-empty,
+.habits-empty {
+    text-align: center;
+    color: var(--text-light);
+    padding: var(--space-6) var(--space-3);
+    font-style: italic;
+}
+
+/* ======================================================
+   CATEGORY LABEL
+====================================================== */
+
+.task__category {
+    display: block;
+    font-size: var(--text-xs);
+    color: var(--text-light);
+    margin-top: var(--space-1);
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (min-width: 768px) {
+    .tasks-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .tasks-stats {
+        margin-top: 0;
+    }
+
+    .task__content {
+        flex: 1;
+    }
+}

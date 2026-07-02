@@ -1,0 +1,224 @@
+/*
+==========================================================
+🌸 To Do da Pandinha
+Base Styles
+----------------------------------------------------------
+Responsabilidade:
+Definir os estilos globais da aplicação.
+
+Não criar componentes.
+Não criar layouts.
+==========================================================
+*/
+
+/* ======================================================
+   HTML & BODY
+====================================================== */
+
+html {
+    font-size: 16px;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: var(--font-body);
+    font-size: var(--text-md);
+    font-weight: var(--weight-regular);
+    line-height: var(--line-normal);
+
+    color: var(--charcoal);
+
+    background: var(--paper);
+
+    overflow-x: hidden;
+}
+
+/* ======================================================
+   TYPOGRAPHY
+====================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    font-family: var(--font-title);
+
+    font-weight: var(--weight-semibold);
+
+    line-height: var(--line-tight);
+
+    color: var(--charcoal);
+}
+
+h1 {
+    font-size: var(--text-3xl);
+}
+
+h2 {
+    font-size: var(--text-2xl);
+}
+
+h3 {
+    font-size: var(--text-xl);
+}
+
+h4 {
+    font-size: var(--text-lg);
+}
+
+p {
+
+    color: var(--coffee);
+
+    line-height: var(--line-relaxed);
+}
+
+/* ======================================================
+   ROOT APP
+====================================================== */
+
+#app {
+
+    min-height: 100vh;
+
+    background: var(--paper);
+}
+
+/* ======================================================
+   CONTAINERS
+====================================================== */
+
+.container {
+
+    width: min(100% - 2rem, var(--content-max-width));
+
+    margin-inline: auto;
+}
+
+/* ======================================================
+   SCROLLBAR
+====================================================== */
+
+::-webkit-scrollbar {
+
+    width: 10px;
+
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: var(--mist);
+
+    border-radius: var(--radius-pill);
+
+    transition: background var(--transition-normal);
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: var(--rose-light);
+}
+
+/* Firefox */
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--mist) transparent;
+}
+
+/* ======================================================
+   TEXT HELPERS
+====================================================== */
+
+strong {
+    font-weight: var(--weight-bold);
+}
+
+small {
+    font-size: var(--text-sm);
+}
+
+hr {
+
+    border: none;
+
+    border-top: var(--border-light);
+
+    margin-block: var(--space-6);
+}
+
+/* ======================================================
+   ICONS
+====================================================== */
+
+i,
+svg {
+
+    flex-shrink: 0;
+}
+
+/* ======================================================
+   UTILITIES
+====================================================== */
+
+.hidden {
+    display: none !important;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ======================================================
+   IMAGES
+====================================================== */
+
+img {
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+}
+
+/* ======================================================
+   TRANSITIONS
+====================================================== */
+
+a,
+button,
+input,
+textarea,
+select {
+
+    transition:
+
+        background var(--transition-fast),
+
+        color var(--transition-fast),
+
+        border-color var(--transition-fast),
+
+        opacity var(--transition-fast),
+
+        transform var(--transition-fast),
+
+        box-shadow var(--transition-fast);
+}

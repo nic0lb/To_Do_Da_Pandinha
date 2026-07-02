@@ -1,0 +1,178 @@
+/*
+==========================================================
+🌸 To Do da Pandinha
+Design Tokens
+----------------------------------------------------------
+Responsabilidade:
+Centralizar todas as variáveis do projeto.
+
+Nenhuma regra de estilo deve ser escrita aqui.
+==========================================================
+*/
+
+:root {
+
+    /* ======================================================
+       COLORS
+    ====================================================== */
+
+    /* Backgrounds */
+    --paper: #F8F6F3;
+    --cream: #FFFFFF;
+    --mist: #E7E4DF;
+
+    /* Brand */
+    --rose: #D86A7A;
+    --rose-light: #F4D4D9;
+    --rose-dark: #B94E61;
+
+    /* Supporting */
+    --sage: #93B49F;
+    --sage-light: #D9E8DD;
+
+    --sky: #7FA8C9;
+    --gold: #D8B65A;
+
+    /* Text */
+    --charcoal: #2D2D2D;
+    --coffee: #6F655D;
+    --text-light: #8F8780;
+
+    /* Status */
+    --success: #6FAF7C;
+    --warning: #E7B65C;
+    --danger: #D56A6A;
+    --info: #6FA4D8;
+
+    /* ======================================================
+       TYPOGRAPHY
+    ====================================================== */
+
+    --font-title: "Poppins", sans-serif;
+    --font-body: "Inter", sans-serif;
+
+    /* Font Sizes */
+
+    --text-xs: .75rem;
+    --text-sm: .875rem;
+    --text-md: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.5rem;
+    --text-2xl: 2rem;
+    --text-3xl: 2.5rem;
+
+    /* Font Weight */
+
+    --weight-light: 300;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+
+    /* Line Height */
+
+    --line-tight: 1.2;
+    --line-normal: 1.5;
+    --line-relaxed: 1.8;
+
+    /* ======================================================
+       SPACING
+    ====================================================== */
+
+    --space-1: .25rem;
+    --space-2: .5rem;
+    --space-3: .75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+
+    /* ======================================================
+       BORDER RADIUS
+    ====================================================== */
+
+    --radius-sm: .5rem;
+    --radius-md: .75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-pill: 999px;
+
+    /* ======================================================
+       SHADOWS
+    ====================================================== */
+
+    --shadow-xs: 0 1px 2px rgba(0,0,0,.05);
+
+    --shadow-sm:
+        0 2px 8px rgba(0,0,0,.05);
+
+    --shadow-md:
+        0 6px 20px rgba(0,0,0,.08);
+
+    --shadow-lg:
+        0 12px 32px rgba(0,0,0,.10);
+
+    /* ======================================================
+       BORDERS
+    ====================================================== */
+
+    --border-light: 1px solid var(--mist);
+
+    /* ======================================================
+       TRANSITIONS
+    ====================================================== */
+
+    --transition-fast: 150ms ease;
+    --transition-normal: 250ms ease;
+    --transition-slow: 350ms ease;
+
+    /* ======================================================
+       LAYOUT
+    ====================================================== */
+
+    --sidebar-width: 280px;
+    --header-height: 72px;
+    --bottom-nav-height: 72px;
+
+    --content-max-width: 1400px;
+
+    /* ======================================================
+       Z-INDEX
+    ====================================================== */
+
+    --z-base: 1;
+    --z-dropdown: 10;
+    --z-sticky: 100;
+    --z-overlay: 500;
+    --z-modal: 1000;
+    --z-toast: 1100;
+
+    /* ======================================================
+       GRADIENTS
+    ====================================================== */
+
+    --gradient-rose:
+        linear-gradient(
+            135deg,
+            #F7E8EB,
+            #F2D4DA
+        );
+
+    --gradient-calm:
+        linear-gradient(
+            135deg,
+            #F8F6F3,
+            #EEF5F1
+        );
+
+    --gradient-gold:
+        linear-gradient(
+            135deg,
+            #E8D7A5,
+            #D8B65A
+        );
+
+}

@@ -1,0 +1,222 @@
+/* ======================================================
+   PLANNER PAGE
+====================================================== */
+
+.planner-page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    padding: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.planner-header {
+    text-align: center;
+}
+
+.planner-header h1 {
+    font-size: var(--text-3xl);
+    color: var(--charcoal);
+}
+
+.planner-subtitle {
+    color: var(--coffee);
+    font-size: var(--text-md);
+}
+
+/* Formulário de Criação */
+.planner-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--cream);
+    padding: 0.65rem 0.9rem;
+    border-radius: 18px;
+    box-shadow: var(--shadow-sm);
+    border: 2px solid transparent;
+    transition: all var(--transition-normal);
+}
+
+.planner-form:focus-within {
+    border-color: var(--rose);
+    box-shadow: var(--shadow-md);
+}
+
+.planner-form input[type="text"] {
+    flex: 1 1 180px;
+    border: none;
+    padding: 0.6rem 0.4rem;
+    font-size: 1rem;
+    outline: none;
+    background: transparent;
+    color: var(--charcoal);
+}
+
+.planner-select,
+.planner-time {
+    border: none;
+    background: var(--paper);
+    padding: 0.55rem 0.6rem;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+}
+
+.planner-form button[type="submit"] {
+    background: var(--gradient-rose);
+    color: var(--rose-dark);
+    border: none;
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    flex-shrink: 0;
+}
+
+.planner-form button[type="submit"]:hover {
+    transform: scale(1.06);
+    box-shadow: var(--shadow-md);
+}
+
+/* Grade Semanal */
+.planner-days {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+}
+
+.planner-day {
+    background: var(--cream);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-4);
+}
+
+.planner-day__title {
+    font-size: var(--text-md);
+    color: var(--rose-dark);
+    margin-bottom: var(--space-3);
+    border-bottom: var(--border-light);
+    padding-bottom: var(--space-2);
+}
+
+.planner-day__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    list-style: none;
+    padding: 0;
+}
+
+.planner-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    background: var(--paper);
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--sky);
+    transition: all var(--transition-normal);
+}
+
+.planner-item:hover {
+    transform: translateX(3px);
+}
+
+.planner-item__check {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--rose);
+    background: transparent;
+    cursor: pointer;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.planner-item--done .planner-item__check {
+    background: var(--success);
+    border-color: var(--success);
+}
+
+.planner-item--done .planner-item__check::after {
+    content: '✓';
+    color: white;
+    font-size: 0.7rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.planner-item__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.planner-item__title {
+    font-size: var(--text-sm);
+    color: var(--charcoal);
+    font-weight: 500;
+}
+
+.planner-item--done .planner-item__title {
+    text-decoration: line-through;
+    color: var(--text-light);
+}
+
+.planner-item__meta {
+    font-size: var(--text-xs);
+    color: var(--text-light);
+}
+
+.planner-item__delete {
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    opacity: 0.3;
+    transition: all var(--transition-fast);
+}
+
+.planner-item:hover .planner-item__delete {
+    opacity: 1;
+}
+
+.planner-empty {
+    text-align: center;
+    color: var(--text-light);
+    font-style: italic;
+    font-size: var(--text-sm);
+    padding: var(--space-3);
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (min-width: 768px) {
+    .planner-days {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1280px) {
+    .planner-days {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

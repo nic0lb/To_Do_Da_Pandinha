@@ -1,0 +1,271 @@
+/*
+==========================================================
+🌸 To Do da Pandinha
+Components
+==========================================================
+*/
+
+/* ======================================================
+   HEADER
+====================================================== */
+
+.header {
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-inline: var(--space-8);
+
+}
+
+.header__welcome {
+
+    display: inline-block;
+
+    margin-bottom: var(--space-1);
+
+    font-size: var(--text-sm);
+
+    color: var(--coffee);
+}
+
+.header__title {
+
+    font-size: var(--text-2xl);
+
+    margin-bottom: var(--space-1);
+}
+
+.header__date {
+
+    color: var(--text-light);
+
+    text-transform: capitalize;
+}
+
+.header__profile {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.avatar {
+
+    width: 52px;
+
+    height: 52px;
+
+    border-radius: 50%;
+
+    background: var(--gradient-rose);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 1.4rem;
+
+    box-shadow: var(--shadow-sm);
+}
+
+/* ======================================================
+   SIDEBAR
+====================================================== */
+
+.sidebar {
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: var(--space-8);
+
+}
+
+.sidebar__brand {
+
+    text-align: center;
+
+    margin-bottom: var(--space-10);
+
+}
+
+.sidebar__logo {
+
+    width: 82px;
+
+    height: 82px;
+
+    margin: 0 auto var(--space-4);
+
+    border-radius: 50%;
+
+    background: var(--gradient-rose);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 2rem;
+
+    box-shadow: var(--shadow-md);
+
+}
+
+.sidebar__brand h2 {
+
+    margin-bottom: var(--space-2);
+
+}
+
+.sidebar__brand p {
+
+    font-size: var(--text-sm);
+
+    color: var(--text-light);
+
+}
+
+.sidebar__menu {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-2);
+
+    flex: 1;
+
+}
+
+.sidebar__footer {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--space-2);
+
+}
+
+.sidebar__item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--space-3);
+
+    padding: var(--space-4);
+
+    border-radius: var(--radius-lg);
+
+    color: var(--coffee);
+
+    transition: var(--transition-normal);
+
+}
+
+.sidebar__item:hover {
+
+    background: var(--rose-light);
+
+    color: var(--rose-dark);
+
+}
+
+.sidebar__item.active {
+
+    background: var(--gradient-rose);
+
+    color: white;
+
+    box-shadow: var(--shadow-sm);
+
+}
+
+.sidebar__item span {
+
+    font-size: 1.2rem;
+
+}
+
+/* ======================================================
+   BOTTOM NAVIGATION
+====================================================== */
+
+.bottom-nav__item {
+
+    width: 52px;
+
+    height: 52px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 1.3rem;
+
+    color: var(--coffee);
+
+    transition: var(--transition-normal);
+
+}
+
+.bottom-nav__item.active {
+
+    background: var(--gradient-rose);
+
+    color: white;
+
+}
+
+.bottom-nav__item:hover {
+
+    background: var(--rose-light);
+
+}
+/* Container fixo para os alertas */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    z-index: var(--z-toast);
+}
+
+.toast {
+    background: var(--cream);
+    color: var(--charcoal);
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    animation: fadeInUp var(--transition-fast) ease;
+    transition: all var(--transition-normal);
+}
+
+.toast--success { border-left: 4px solid var(--success); }
+.toast--info { border-left: 4px solid var(--info); }
+.toast--danger { border-left: 4px solid var(--danger); }

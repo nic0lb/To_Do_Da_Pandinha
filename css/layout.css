@@ -1,0 +1,187 @@
+/*
+==========================================================
+🌸 To Do da Pandinha
+Layout (Mobile First)
+==========================================================
+*/
+
+/* ======================================================
+   APPLICATION
+====================================================== */
+
+#app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ======================================================
+   SIDEBAR
+====================================================== */
+
+#sidebar {
+    display: none;
+}
+
+/* ======================================================
+   APP SHELL
+====================================================== */
+
+#app-shell {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    padding-bottom: var(--bottom-nav-height);
+}
+
+/* ======================================================
+   HEADER
+====================================================== */
+
+#header {
+
+    position: sticky;
+
+    top: 0;
+
+    min-height: var(--header-height);
+
+    padding-block: var(--space-3);
+
+    background: rgba(248, 246, 243, .92);
+
+    backdrop-filter: blur(14px);
+
+    border-bottom: var(--border-light);
+
+    z-index: var(--z-dropdown);
+
+}
+
+/* ======================================================
+   MAIN
+====================================================== */
+
+#main-content {
+
+    flex: 1;
+
+    padding: var(--space-5);
+
+    /* Contêiner com altura dinâmica baseada na viewport, evitando que o
+       conteúdo (ex: lista de tarefas) empurre o menu para fora da tela. */
+    max-height: calc(100vh - var(--header-height) - var(--bottom-nav-height));
+
+    overflow-y: auto;
+
+    -webkit-overflow-scrolling: touch;
+
+}
+
+/* ======================================================
+   BOTTOM NAVIGATION
+====================================================== */
+
+#bottom-navigation {
+
+    position: fixed;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: var(--bottom-nav-height);
+
+    display: flex;
+
+    justify-content: space-around;
+
+    align-items: center;
+
+    background: rgba(255,255,255,.96);
+
+    backdrop-filter: blur(18px);
+
+    border-top: var(--border-light);
+
+    z-index: var(--z-modal);
+
+}
+
+/* ======================================================
+   TABLETS
+====================================================== */
+
+@media (min-width: 768px) {
+
+    #main-content {
+
+        padding: var(--space-8);
+
+    }
+
+}
+
+/* ======================================================
+   NOTEBOOK / DESKTOP
+====================================================== */
+
+@media (min-width: 1024px) {
+
+    #app {
+
+        display: grid;
+
+        grid-template-columns:
+            var(--sidebar-width)
+            1fr;
+
+    }
+
+    #sidebar {
+
+        display: block;
+
+        position: fixed;
+
+        left: 0;
+        top: 0;
+
+        width: var(--sidebar-width);
+
+        height: 100vh;
+
+        background: var(--cream);
+
+        border-right: var(--border-light);
+
+        overflow-y: auto;
+
+    }
+
+    #app-shell {
+
+        margin-left: var(--sidebar-width);
+
+        padding-bottom: 0;
+
+    }
+
+    #bottom-navigation {
+
+        display: none;
+
+    }
+
+    /* No desktop não existe bottom navigation, então o cálculo de altura
+       máxima considera apenas o header. */
+    #main-content {
+
+        max-height: calc(100vh - var(--header-height));
+
+    }
+
+}

@@ -1,0 +1,197 @@
+/* ======================================================
+   HABITS PAGE
+====================================================== */
+
+.habits-page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+}
+
+.habits-page h1 {
+    font-size: var(--text-3xl);
+    color: var(--charcoal);
+}
+
+.habits-subtitle {
+    color: var(--coffee);
+    font-size: var(--text-md);
+    margin-bottom: var(--space-6);
+}
+
+/* Lista de Hábitos */
+.habits-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.habit-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
+    padding: var(--space-5);
+    background: var(--cream);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+}
+
+.habit-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.habit-item.habit--done {
+    opacity: 0.85;
+    border-left: 5px solid var(--success);
+}
+
+.habit-icon {
+    font-size: 2.2rem;
+    width: 60px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.habit-info {
+    flex: 1;
+}
+
+.habit-title {
+    display: block;
+    font-size: var(--text-lg);
+    color: var(--charcoal);
+    margin-bottom: var(--space-1);
+}
+
+.habit-streak {
+    font-size: var(--text-sm);
+    color: var(--sage);
+    font-weight: var(--weight-medium);
+}
+
+.habit-check {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 3px solid var(--rose);
+    background: transparent;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all var(--transition-fast);
+}
+
+.habit-item.habit--done .habit-check {
+    background: var(--success);
+    border-color: var(--success);
+    color: white;
+}
+
+/* Botão Adicionar */
+.add-habit-btn {
+    align-self: center;
+    margin-top: var(--space-6);
+    padding: var(--space-4) var(--space-8);
+    background: var(--gradient-rose);
+    color: var(--rose-dark);
+    border: none;
+    border-radius: var(--radius-pill);
+    font-size: var(--text-lg);
+    font-weight: var(--weight-semibold);
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.add-habit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+/* ======================================================
+   HABIT STREAKS & TRACKING
+====================================================== */
+
+.habit__content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex: 1;
+}
+
+.habit__emoji {
+    font-size: var(--text-2xl);
+    display: flex;
+    align-items: center;
+}
+
+.habit__streak {
+    display: block;
+    font-size: var(--text-xs);
+    color: var(--rose);
+    margin-top: var(--space-1);
+    font-weight: var(--weight-semibold);
+}
+
+.habit--done .habit__streak {
+    color: var(--success);
+}
+
+/* ======================================================
+   EMPTY STATE
+====================================================== */
+
+.habits-empty {
+    text-align: center;
+    color: var(--text-light);
+    padding: var(--space-6) var(--space-3);
+    font-style: italic;
+}
+
+/* ======================================================
+   ADD HABIT BUTTON
+====================================================== */
+
+.add-habit-btn {
+    align-self: flex-start;
+    margin-top: var(--space-4);
+    padding: var(--space-3) var(--space-4);
+    background: var(--gradient-rose);
+    border: none;
+    border-radius: var(--radius-pill);
+    color: var(--rose-dark);
+    cursor: pointer;
+    font-weight: var(--weight-semibold);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.add-habit-btn:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (min-width: 768px) {
+    .habits-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: var(--space-5);
+    }
+
+    .habits-header h1 {
+        margin: 0;
+    }
+
+    .add-habit-btn {
+        margin-top: 0;
+    }
+}

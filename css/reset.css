@@ -1,0 +1,172 @@
+/*
+==========================================================
+🌸 To Do da Pandinha
+Modern CSS Reset
+----------------------------------------------------------
+Responsabilidade:
+Normalizar estilos entre navegadores modernos.
+==========================================================
+*/
+
+/* ======================================================
+   BOX MODEL
+====================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* ======================================================
+   RESET
+====================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* ======================================================
+   HTML
+====================================================== */
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* ======================================================
+   BODY
+====================================================== */
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ======================================================
+   MEDIA
+====================================================== */
+
+img,
+picture,
+svg,
+video,
+canvas {
+    display: block;
+    max-width: 100%;
+}
+
+/* ======================================================
+   FORMS
+====================================================== */
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* ======================================================
+   LINKS
+====================================================== */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ======================================================
+   LISTS
+====================================================== */
+
+ul,
+ol {
+    list-style: none;
+}
+
+/* ======================================================
+   TABLES
+====================================================== */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ======================================================
+   QUOTES
+====================================================== */
+
+blockquote,
+q {
+    quotes: none;
+}
+
+/* ======================================================
+   DISABLED ELEMENTS
+====================================================== */
+
+button:disabled,
+input:disabled,
+textarea:disabled,
+select:disabled {
+    cursor: not-allowed;
+}
+
+/* ======================================================
+   SELECTION
+====================================================== */
+
+::selection {
+    background: var(--rose-light);
+    color: var(--charcoal);
+}
+
+/* ======================================================
+   FOCUS
+====================================================== */
+
+:focus-visible {
+    outline: 2px solid var(--rose);
+    outline-offset: 3px;
+}
+
+/* ======================================================
+   REDUCED MOTION
+====================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+
+}
