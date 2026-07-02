@@ -12,7 +12,8 @@ Layout (Mobile First)
 #app {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100dvh;
+    background: var(--background);
 }
 
 /* ======================================================
@@ -30,8 +31,8 @@ Layout (Mobile First)
 #app-shell {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-
+    flex: 1;
+    min-height: 0;
     padding-bottom: var(--bottom-nav-height);
 }
 
@@ -40,9 +41,7 @@ Layout (Mobile First)
 ====================================================== */
 
 #header {
-
     position: sticky;
-
     top: 0;
 
     min-height: var(--header-height);
@@ -56,7 +55,6 @@ Layout (Mobile First)
     border-bottom: var(--border-light);
 
     z-index: var(--z-dropdown);
-
 }
 
 /* ======================================================
@@ -64,19 +62,14 @@ Layout (Mobile First)
 ====================================================== */
 
 #main-content {
-
     flex: 1;
-
-    padding: var(--space-5);
-
-    /* Contêiner com altura dinâmica baseada na viewport, evitando que o
-       conteúdo (ex: lista de tarefas) empurre o menu para fora da tela. */
-    max-height: calc(100vh - var(--header-height) - var(--bottom-nav-height));
+    min-height: 0;
 
     overflow-y: auto;
 
     -webkit-overflow-scrolling: touch;
 
+    padding: var(--space-5);
 }
 
 /* ======================================================
@@ -84,22 +77,16 @@ Layout (Mobile First)
 ====================================================== */
 
 #bottom-navigation {
-
-    position: fixed;
-
-    left: 0;
-
+    position: sticky;
     bottom: 0;
-
-    width: 100%;
-
-    height: var(--bottom-nav-height);
 
     display: flex;
 
     justify-content: space-around;
-
     align-items: center;
+
+    width: 100%;
+    height: var(--bottom-nav-height);
 
     background: rgba(255,255,255,.96);
 
@@ -109,15 +96,76 @@ Layout (Mobile First)
 
     z-index: var(--z-modal);
 
+    flex-shrink: 0;
 }
 
 /* ======================================================
-   TABLETS
+   TABLETS (Portrait)
 ====================================================== */
 
-@media (min-width: 768px) {
+@media (min-width:768px){
 
-    #main-content {
+    #main-content{
+
+        padding: var(--space-7);
+
+    }
+
+}
+
+/* ======================================================
+   TABLETS (Landscape) / Notebooks pequenos
+====================================================== */
+
+@media (min-width:992px){
+
+    #app{
+
+        display:grid;
+
+        grid-template-columns:
+            var(--sidebar-width)
+            minmax(0,1fr);
+
+        min-height:100dvh;
+
+    }
+
+    #sidebar{
+
+        display:flex;
+
+        flex-direction:column;
+
+        position:sticky;
+
+        top:0;
+
+        height:100dvh;
+
+        overflow-y:auto;
+
+        background:var(--cream);
+
+        border-right:var(--border-light);
+
+    }
+
+    #app-shell{
+
+        min-width:0;
+
+        padding-bottom:0;
+
+    }
+
+    #bottom-navigation{
+
+        display:none;
+
+    }
+
+    #main-content{
 
         padding: var(--space-8);
 
@@ -126,61 +174,16 @@ Layout (Mobile First)
 }
 
 /* ======================================================
-   NOTEBOOK / DESKTOP
+   DESKTOP
 ====================================================== */
 
-@media (min-width: 1024px) {
+@media (min-width:1280px){
 
-    #app {
+    #main-content{
 
-        display: grid;
+        padding-inline: clamp(2rem,4vw,5rem);
 
-        grid-template-columns:
-            var(--sidebar-width)
-            1fr;
-
-    }
-
-    #sidebar {
-
-        display: block;
-
-        position: fixed;
-
-        left: 0;
-        top: 0;
-
-        width: var(--sidebar-width);
-
-        height: 100vh;
-
-        background: var(--cream);
-
-        border-right: var(--border-light);
-
-        overflow-y: auto;
-
-    }
-
-    #app-shell {
-
-        margin-left: var(--sidebar-width);
-
-        padding-bottom: 0;
-
-    }
-
-    #bottom-navigation {
-
-        display: none;
-
-    }
-
-    /* No desktop não existe bottom navigation, então o cálculo de altura
-       máxima considera apenas o header. */
-    #main-content {
-
-        max-height: calc(100vh - var(--header-height));
+        padding-block: var(--space-8);
 
     }
 
